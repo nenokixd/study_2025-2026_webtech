@@ -1,0 +1,1285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #1a1a1a;
+    color: #e8e8e8;
+    line-height: 1.6;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(200, 60, 60, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(100, 100, 100, 0.1) 0%, transparent 50%);
+    min-height: 100vh;
+}
+
+/* Хедер */
+.hk-header {
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #c83c3c;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.hk-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.hk-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hk-nav-brand h1 a {
+    color: #c83c3c;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+}
+
+.game-title {
+    color: #d86a6a;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.hk-nav-links a {
+    color: #e8e8e8;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.hk-nav-links a:hover {
+    color: #c83c3c;
+}
+
+.hk-nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #c83c3c;
+    transition: width 0.3s;
+}
+
+.hk-nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Герой секция */
+.hk-hero {
+    background: linear-gradient(135deg, 
+        rgba(50, 30, 30, 0.9) 0%, 
+        rgba(100, 40, 40, 0.7) 50%, 
+        rgba(30, 20, 20, 0.9) 100%),
+        url('https://www.well-played.com.au/wp-content/uploads/2022/06/silksong.png');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 2rem;
+    text-align: center;
+    border-bottom: 3px solid #c83c3c;
+    position: relative;
+}
+
+.hk-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(200, 60, 60, 0.1) 0%, 
+        transparent 50%,
+        rgba(200, 60, 60, 0.1) 100%);
+}
+
+.hk-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hk-hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(200, 60, 60, 0.5);
+    margin-bottom: 1rem;
+}
+
+.hk-hero-content p {
+    font-size: 1.3rem;
+    color: #d86a6a;
+    font-weight: 300;
+}
+
+/* Навигация по разделам */
+.hk-section-nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(40, 40, 40, 0.9);
+    padding: 1rem;
+    border-bottom: 1px solid #666;
+    position: sticky;
+    top: 70px;
+    z-index: 999;
+}
+
+.hk-nav-item {
+    position: relative;
+    margin: 0 1.5rem;
+}
+
+.hk-nav-item > span,
+.hk-nav-item > a {
+    color: #e8e8e8;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.hk-nav-item > span:hover,
+.hk-nav-item > a:hover {
+    background: rgba(200, 60, 60, 0.2);
+    color: #d86a6a;
+}
+
+/* Выпадающее меню */
+.hk-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(30, 30, 30, 0.98);
+    backdrop-filter: blur(10px);
+    border: 1px solid #666;
+    border-radius: 8px;
+    padding: 0.5rem;
+    min-width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hk-nav-item:hover .hk-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hk-submenu-item {
+    display: block;
+    color: #e8e8e8;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.hk-submenu-item:hover {
+    background: rgba(200, 60, 60, 0.2);
+    color: #d86a6a;
+    border-left-color: #c83c3c;
+}
+
+/* Основной контент */
+.hk-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hk-content-section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(35, 35, 35, 0.7);
+    border-radius: 12px;
+    border: 1px solid #555;
+    position: relative;
+}
+
+.hk-content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c83c3c, transparent);
+}
+
+.hk-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hk-section-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #d86a6a;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hk-section-header p {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+}
+
+/* Сетка оборудования */
+.hk-equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.hk-equipment-card {
+    background: linear-gradient(135deg, 
+        rgba(50, 40, 40, 0.8), 
+        rgba(70, 50, 50, 0.6));
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #666;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hk-equipment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(200, 200, 200, 0.1), 
+        transparent);
+    transition: left 0.5s;
+}
+
+.hk-equipment-card:hover::before {
+    left: 100%;
+}
+
+.hk-equipment-card:hover {
+    transform: translateY(-5px);
+    border-color: #c83c3c;
+    box-shadow: 0 10px 30px rgba(200, 60, 60, 0.3);
+}
+
+.hk-card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    filter: grayscale(1) brightness(2);
+}
+
+.hk-equipment-card h3 {
+    color: #d86a6a;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.hk-equipment-card p {
+    color: #c0c0c0;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.hk-item-list {
+    list-style: none;
+}
+
+.hk-item-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(102, 102, 102, 0.3);
+    color: #e8e8e8;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.hk-item-list li::before {
+    content: '❖';
+    position: absolute;
+    left: 0;
+    color: #c83c3c;
+}
+
+.hk-item-list li:last-child {
+    border-bottom: none;
+}
+
+/* Акцентные элементы */
+.hk-accent-red { color: #c83c3c; }
+.hk-accent-silver { color: #c0c0c0; }
+.hk-accent-white { color: #ffffff; }
+
+/* Футер */
+.hk-footer {
+    background: rgba(30, 30, 30, 0.95);
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #666;
+    color: #b0b0b0;
+    position: relative;
+}
+
+.hk-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        #c83c3c, 
+        transparent);
+}
+
+/* Анимация появления */
+@keyframes silverGlow {
+    0% { box-shadow: 0 0 5px rgba(192, 192, 192, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(192, 192, 192, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(192, 192, 192, 0.3); }
+}
+
+.hk-equipment-card {
+    animation: silverGlow 3s ease-in-out infinite;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hk-navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hk-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hk-section-nav {
+        flex-wrap: wrap;
+        top: 120px;
+    }
+    
+    .hk-nav-item {
+        margin: 0.5rem;
+    }
+    
+    .hk-equipment-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hk-container {
+        padding: 1rem;
+    }
+    
+    .hk-hero {
+        padding: 4rem 1rem;
+    }
+}
+
+/* Специальные стили для серебряных акцентов */
+.silver-border {
+    border: 1px solid #c0c0c0;
+}
+
+.silver-text {
+    color: #c0c0c0;
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+.red-glow {
+    text-shadow: 0 0 10px rgba(200, 60, 60, 0.5);
+}
+
+/* Стили для главной страницы игры */
+.hk-game-info {
+    margin-top: 2rem;
+}
+
+.hk-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.hk-info-card {
+    background: linear-gradient(135deg, 
+        rgba(50, 40, 40, 0.8), 
+        rgba(70, 50, 50, 0.6));
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #666;
+    text-align: center;
+}
+
+.hk-info-card h3 {
+    color: #d86a6a;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.hk-info-card p {
+    color: #c0c0c0;
+    font-weight: 500;
+}
+
+.hk-description {
+    background: rgba(40, 40, 40, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #c83c3c;
+}
+
+.hk-description h3 {
+    color: #d86a6a;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.hk-description h4 {
+    color: #c0c0c0;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.hk-features-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.hk-features-list li {
+    padding: 0.5rem 0;
+    color: #e8e8e8;
+    border-bottom: 1px solid rgba(102, 102, 102, 0.3);
+}
+
+.hk-features-list li:last-child {
+    border-bottom: none;
+}
+
+/* Секция призыва к действию */
+.hk-cta-section {
+    background: linear-gradient(135deg, 
+        rgba(50, 30, 30, 0.9), 
+        rgba(100, 40, 40, 0.7));
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #c83c3c;
+    margin-top: 2rem;
+}
+
+.hk-cta-content h2 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.hk-cta-content p {
+    color: #d86a6a;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.hk-cta-button {
+    display: inline-block;
+    background: #c83c3c;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.hk-cta-button:hover {
+    background: transparent;
+    border-color: #c83c3c;
+    color: #c83c3c;
+    transform: translateY(-2px);
+}
+/* Стили для ссылок в карточках */
+.hk-card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #c83c3c;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.hk-card-link:hover {
+    color: #d86a6a;
+    transform: translateX(5px);
+}
+
+/* Стили для страниц "в разработке" */
+.hk-coming-soon {
+    text-align: center;
+    padding: 3rem;
+    background: rgba(40, 40, 40, 0.8);
+    border-radius: 8px;
+    border: 2px dashed #666;
+}
+
+.hk-coming-soon h3 {
+    color: #d86a6a;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.hk-coming-soon p {
+    color: #c0c0c0;
+    margin-bottom: 2rem;
+}
+/* Стили для кликабельных карточек */
+.hk-equipment-card-link {
+    text-decoration: none;
+    display: block;
+}
+
+.hk-equipment-card {
+    background: linear-gradient(135deg, 
+        rgba(50, 40, 40, 0.8), 
+        rgba(70, 50, 50, 0.6));
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #666;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hk-equipment-card-link:hover .hk-equipment-card {
+    transform: translateY(-8px);
+    border-color: #c83c3c;
+    box-shadow: 0 15px 40px rgba(200, 60, 60, 0.4);
+}
+
+.hk-equipment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(200, 200, 200, 0.15), 
+        transparent);
+    transition: left 0.6s;
+}
+
+.hk-equipment-card-link:hover .hk-equipment-card::before {
+    left: 100%;
+}
+
+.hk-card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    filter: grayscale(1) brightness(2);
+    transition: transform 0.3s ease;
+}
+
+.hk-equipment-card-link:hover .hk-card-icon {
+    transform: scale(1.1);
+    filter: grayscale(0) brightness(1.5);
+}
+
+.hk-equipment-card h3 {
+    color: #d86a6a;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+}
+
+.hk-equipment-card-link:hover .hk-equipment-card h3 {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(200, 60, 60, 0.5);
+}
+
+.hk-equipment-card p {
+    color: #c0c0c0;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.hk-item-list {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.hk-item-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(102, 102, 102, 0.3);
+    color: #e8e8e8;
+    position: relative;
+    padding-left: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.hk-equipment-card-link:hover .hk-item-list li {
+    color: #ffffff;
+}
+
+.hk-item-list li::before {
+    content: '❖';
+    position: absolute;
+    left: 0;
+    color: #c83c3c;
+    transition: color 0.3s ease;
+}
+
+.hk-equipment-card-link:hover .hk-item-list li::before {
+    color: #ffffff;
+}
+
+.hk-item-list li:last-child {
+    border-bottom: none;
+}
+
+/* Стрелка на карточках */
+.hk-card-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: #c83c3c;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.hk-equipment-card-link:hover .hk-card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Анимация появления карточек */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hk-equipment-card {
+    animation: cardAppear 0.6s ease-out forwards;
+}
+
+/* Задержки для последовательного появления */
+.hk-equipment-card-link:nth-child(1) .hk-equipment-card { animation-delay: 0.1s; }
+.hk-equipment-card-link:nth-child(2) .hk-equipment-card { animation-delay: 0.2s; }
+.hk-equipment-card-link:nth-child(3) .hk-equipment-card { animation-delay: 0.3s; }
+.hk-equipment-card-link:nth-child(4) .hk-equipment-card { animation-delay: 0.4s; }
+.hk-equipment-card-link:nth-child(5) .hk-equipment-card { animation-delay: 0.5s; }
+.hk-equipment-card-link:nth-child(6) .hk-equipment-card { animation-delay: 0.6s; }
+
+/* Адаптивность для карточек */
+@media (max-width: 768px) {
+    .hk-equipment-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hk-equipment-card {
+        padding: 1.5rem;
+    }
+    
+    .hk-card-arrow {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Стили для страницы Хорнет */
+.hk-character-info {
+    margin-top: 2rem;
+}
+
+.hk-character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.hk-character-card {
+    background: linear-gradient(135deg, 
+        rgba(50, 40, 40, 0.8), 
+        rgba(70, 50, 50, 0.6));
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #666;
+    border-left: 4px solid #c83c3c;
+}
+
+.hk-character-card h3 {
+    color: #d86a6a;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.hk-character-card p {
+    color: #c0c0c0;
+    line-height: 1.5;
+}
+
+/* Стили для патч-ноутсов */
+.hk-patches-list {
+    margin-top: 2rem;
+}
+
+.hk-patch-card {
+    background: rgba(40, 40, 40, 0.8);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #555;
+}
+
+.hk-patch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #666;
+}
+
+.hk-patch-header h3 {
+    color: #d86a6a;
+    font-family: 'Cinzel', serif;
+}
+
+.hk-patch-date {
+    color: #c0c0c0;
+    font-size: 0.9rem;
+    background: rgba(200, 60, 60, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+}
+
+.hk-patch-content h4 {
+    color: #c0c0c0;
+    margin-bottom: 0.5rem;
+}
+
+.hk-patch-content ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.hk-patch-content li {
+    color: #e8e8e8;
+    padding: 0.3rem 0;
+    position: relative;
+}
+
+.hk-patch-content li::before {
+    content: '•';
+    color: #c83c3c;
+    position: absolute;
+    left: -1rem;
+}
+
+/* Стили для Стальной души */
+.hk-steelsoul-info {
+    margin-top: 2rem;
+}
+
+.hk-warning-card {
+    background: linear-gradient(135deg, 
+        rgba(200, 60, 60, 0.1), 
+        rgba(100, 30, 30, 0.2));
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #c83c3c;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.hk-warning-card h3 {
+    color: #ff4444;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.hk-rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.hk-rule-card {
+    background: rgba(40, 40, 40, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #555;
+    text-align: center;
+}
+
+.hk-rule-card h4 {
+    color: #d86a6a;
+    margin-bottom: 0.8rem;
+    font-family: 'Cinzel', serif;
+}
+
+.hk-rule-card p {
+    color: #c0c0c0;
+    font-size: 0.95rem;
+}
+
+/* Общие стили для "в разработке" */
+.hk-coming-soon {
+    background: rgba(40, 40, 40, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px dashed #666;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.hk-coming-soon h3 {
+    color: #d86a6a;
+    margin-bottom: 1.5rem;
+    font-family: 'Cinzel', serif;
+}
+
+.hk-features-list {
+    list-style: none;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    text-align: left;
+}
+
+.hk-features-list li {
+    padding: 0.5rem 0;
+    color: #e8e8e8;
+    border-bottom: 1px solid rgba(102, 102, 102, 0.3);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.hk-features-list li::before {
+    content: '✓';
+    color: #c83c3c;
+    position: absolute;
+    left: 0;
+}
+/* Стили для раздела "Общая информация" */
+.hk-general-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.hk-general-card-link {
+    text-decoration: none;
+    display: block;
+}
+
+.hk-general-card {
+    background: linear-gradient(135deg, 
+        rgba(50, 40, 40, 0.8), 
+        rgba(70, 50, 50, 0.6));
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #666;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.hk-general-card:hover {
+    transform: translateY(-5px);
+    border-color: #c83c3c;
+    box-shadow: 0 10px 25px rgba(200, 60, 60, 0.3);
+}
+
+.hk-general-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    filter: grayscale(1) brightness(2);
+    transition: transform 0.3s ease;
+}
+
+.hk-general-card:hover .hk-general-icon {
+    transform: scale(1.1);
+    filter: grayscale(0) brightness(1.5);
+}
+
+.hk-general-card h3 {
+    color: #d86a6a;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.hk-general-card:hover h3 {
+    color: #ffffff;
+}
+
+.hk-general-card p {
+    color: #c0c0c0;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.hk-general-card .hk-card-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: #c83c3c;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.hk-general-card:hover .hk-card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* Стили для обновленного раздела "Об игре" */
+.hk-highlight {
+    background: linear-gradient(135deg, 
+        rgba(200, 60, 60, 0.1), 
+        rgba(100, 30, 30, 0.2));
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #c83c3c;
+    margin: 2rem 0;
+}
+
+.hk-highlight h4 {
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.hk-highlight p {
+    color: #e8e8e8;
+    line-height: 1.6;
+}
+
+/* Обновляем стили для подзаголовков в описании */
+.hk-description h3 {
+    color: #d86a6a;
+    margin: 2rem 0 1rem 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #666;
+    padding-bottom: 0.5rem;
+}
+
+.hk-description h4 {
+    color: #c0c0c0;
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.hk-description p {
+    color: #e8e8e8;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* Обновляем информационные карточки */
+.hk-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.hk-info-card {
+    background: linear-gradient(135deg, 
+        rgba(50, 40, 40, 0.8), 
+        rgba(70, 50, 50, 0.6));
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #666;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.hk-info-card:hover {
+    transform: translateY(-3px);
+    border-color: #c83c3c;
+}
+
+.hk-info-card h3 {
+    color: #d86a6a;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hk-info-card p {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+/* Стили для страницы мира */
+.hk-world-quicknav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(40, 40, 40, 0.6);
+    border-radius: 10px;
+    border: 1px solid #555;
+}
+
+.hk-world-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.hk-world-link:hover {
+    background: rgba(200, 60, 60, 0.1);
+    border-color: #c83c3c;
+    transform: translateY(-3px);
+}
+
+.hk-world-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    filter: grayscale(1) brightness(2);
+    transition: filter 0.3s ease;
+}
+
+.hk-world-link:hover .hk-world-icon {
+    filter: grayscale(0) brightness(1.5);
+}
+
+.hk-world-link span {
+    color: #e8e8e8;
+    font-weight: 500;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.hk-world-link:hover span {
+    color: #d86a6a;
+}
+
+/* Стили для разделов мира */
+.hk-world-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(35, 35, 35, 0.7);
+    border-radius: 10px;
+    border: 1px solid #555;
+    border-left: 4px solid #c83c3c;
+}
+
+.hk-world-section h3 {
+    color: #d86a6a;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hk-world-section p {
+    color: #c0c0c0;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Сетки для карточек */
+.hk-locations-grid,
+.hk-enemies-grid,
+.hk-npc-grid,
+.hk-merchant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.hk-location-card,
+.hk-enemy-card,
+.hk-npc-card,
+.hk-merchant-card {
+    background: rgba(50, 40, 40, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #666;
+    transition: all 0.3s ease;
+}
+
+.hk-location-card:hover,
+.hk-enemy-card:hover,
+.hk-npc-card:hover,
+.hk-merchant-card:hover {
+    border-color: #c83c3c;
+    transform: translateY(-3px);
+}
+
+.hk-location-card h4,
+.hk-enemy-card h4,
+.hk-npc-card h4,
+.hk-merchant-card h4 {
+    color: #d86a6a;
+    margin-bottom: 0.8rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+}
+
+.hk-location-card p,
+.hk-enemy-card p,
+.hk-npc-card p,
+.hk-merchant-card p {
+    color: #c0c0c0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Специфичные стили для разных типов карточек */
+.hk-merchant-card {
+    border-top: 3px solid #ffd700;
+}
+
+.hk-npc-card {
+    border-top: 3px solid #4a90e2;
+}
+
+.hk-enemy-card {
+    border-top: 3px solid #ff4444;
+}
+
+.hk-location-card {
+    border-top: 3px solid #8a4fff;
+}
+
+/* Анимация появления разделов */
+.hk-world-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hk-world-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Стили для подразделов */
+.hk-subsection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.hk-subsection-card {
+    background: linear-gradient(135deg, 
+        rgba(50, 40, 40, 0.8), 
+        rgba(70, 50, 50, 0.6));
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.hk-subsection-card:hover {
+    transform: translateY(-5px);
+    border-color: #c83c3c;
+    box-shadow: 0 10px 25px rgba(200, 60, 60, 0.3);
+}
+
+.hk-subsection-icon {
+    font-size: 2.5rem;
+    color: #d86a6a;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.hk-subsection-card h3 {
+    color: #ffffff;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.hk-subsection-card p {
+    color: #c0c0c0;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Стили для иконок в меню */
+.hk-submenu-item i {
+    width: 20px;
+    margin-right: 8px;
+    text-align: center;
+}
+
+.nav-main-link i {
+    margin-right: 8px;
+}

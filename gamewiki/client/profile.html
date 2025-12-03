@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - GameWiki</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1><a href="index.html" style="color: #ff6b35; text-decoration: none;">GameWiki</a></h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="#" id="logout-btn">Выйти</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="auth-form">
+            <h2>Профиль пользователя</h2>
+            <div id="userInfo">
+                <p><strong>Имя пользователя:</strong> <span id="username"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>ID:</strong> <span id="userId"></span></p>
+            </div>
+            <button id="logoutButton" class="btn-primary" style="margin-top: 1rem;">Выйти</button>
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>

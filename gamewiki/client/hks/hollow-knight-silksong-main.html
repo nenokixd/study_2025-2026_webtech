@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollow Knight: Silksong - GameWiki</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="hollow-knight-silksong-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="hk-header">
+        <nav class="hk-navbar">
+            <div class="hk-nav-brand">
+                <h1><a href="../index.html">GameWiki</a></h1>
+                <span class="game-title">/ Hollow Knight: Silksong</span>
+            </div>
+            <div class="hk-nav-links">
+                <a href="../index.html">Главная</a>
+                <a href="../login.html" id="login-link">Войти</a>
+                <a href="../profile.html" id="profile-link" style="display: none;">Профиль</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hk-container">
+        <!-- Герой секция -->
+        <section class="hk-hero">
+            <div class="hk-hero-content">
+                <h1 class="red-glow">Hollow Knight: Silksong</h1>
+                <p class="silver-text">Новое приключение Хорнет в королевстве Фарлум</p>
+            </div>
+        </section>
+
+        <!-- УНИВЕРСАЛЬНАЯ НАВИГАЦИЯ -->
+        <div id="hk-navigation-container">
+            <!-- Навигация загрузится через JavaScript -->
+        </div>
+
+        <!-- Основная информация об игре -->
+        <section id="about" class="hk-content-section">
+            <div class="hk-section-header">
+                <h2>О игре</h2>
+                <p>Узнайте все о долгожданном сиквеле Hollow Knight</p>
+            </div>
+
+            <div class="hk-game-info">
+                <div class="hk-info-grid">
+                    <div class="hk-info-card">
+                        <h3><i class="fas fa-gamepad"></i> Разработчик</h3>
+                        <p>Team Cherry</p>
+                    </div>
+                    <div class="hk-info-card">
+                        <h3><i class="fas fa-calendar-alt"></i> Дата выхода</h3>
+                        <p>4 Сентября 2025</p>
+                    </div>
+                    <div class="hk-info-card">
+                        <h3><i class="fas fa-tag"></i> Цена</h3>
+                        <p>$19.99</p>
+                    </div>
+                    <div class="hk-info-card">
+                        <h3><i class="fas fa-desktop"></i> Платформы</h3>
+                        <p>PC, Nintendo Switch, PlayStation 5, Xbox Series X/S</p>
+                    </div>
+                </div>
+
+                <div class="hk-description">
+                    <h3>Что такое Hollow Knight: Silksong?</h3>
+                    <p>Hollow Knight: Silksong — это сиквел получившего признание критиков Hollow Knight, экшн-приключенческой игры, которая успешно сочетает элементы жанра Metroidvania с вызовом и механикой Soulslike игр...</p>
+                    
+                    <!-- Остальное содержимое раздела "Об игре" -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Общая информация -->
+        <section id="general-info" class="hk-content-section">
+            <div class="hk-section-header">
+                <h2>Общая информация</h2>
+                <p>Основные разделы и справочные материалы</p>
+            </div>
+
+            <div class="hk-general-grid">
+                <a href="general/hks-hornet.html" class="hk-general-card-link">
+                    <div class="hk-general-card">
+                        <div class="hk-general-icon"><i class="fas fa-crown"></i></div>
+                        <h3>Хорнет</h3>
+                        <p>Полная информация о главной героине, её истории, способностях и роли в сюжете.</p>
+                        <div class="hk-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a href="general/hks-patches.html" class="hk-general-card-link">
+                    <div class="hk-general-card">
+                        <div class="hk-general-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <h3>Патч Ноут</h3>
+                        <p>Все обновления игры, балансные изменения, исправления багов и новый контент.</p>
+                        <div class="hk-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a href="general/hks-steelsoul.html" class="hk-general-card-link">
+                    <div class="hk-general-card">
+                        <div class="hk-general-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Стальная душа</h3>
+                        <p>Режим повышенной сложности с одной жизнью. Руководство и стратегии выживания.</p>
+                        <div class="hk-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="hk-footer">
+        <p>Hollow Knight: Silksong Wiki • Обновлено: 16 Сен 2025</p>
+    </footer>
+
+    <script src="../auth.js"></script>
+    <script src="hollow-knight-silksong.js"></script>
+    <script>
+        // Динамическая загрузка навигации
+        fetch('navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('hk-navigation-container').innerHTML = data;
+                // Инициализируем меню после загрузки
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+    </script>
+</body>
+</html>

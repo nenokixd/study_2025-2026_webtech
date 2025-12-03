@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk 2077 - GameWiki</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .game-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.igdb.com/igdb/image/upload/t_1080p/co4p7d.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .cyberware-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .cyberware-card {
+            background: #3d3d3d;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1><a href="index.html" style="color: #ff6b35; text-decoration: none;">GameWiki</a></h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="login.html" id="login-link">Войти</a>
+                <a href="profile.html" id="profile-link" style="display: none;">Профиль</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="game-header">
+            <h1>Cyberpunk 2077</h1>
+            <p>Приключения в Найт-Сити будущего</p>
+        </section>
+
+        <div class="game-sections" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="section-card">
+                <h3>🔫 Оружие</h3>
+                <ul>
+                    <li>Техническое оружие</li>
+                    <li>Умное оружие</li>
+                    <li>Обычное оружие</li>
+                    <li>Легендарное оружие</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>⚡ Перки</h3>
+                <ul>
+                    <li>Рефлексы - 20</li>
+                    <li>Тело - 18</li>
+                    <li>Техника - 16</li>
+                    <li>Интеллект - 20</li>
+                    <li>Хладнокровие - 16</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>🏙️ Районы</h3>
+                <ul>
+                    <li>Сити-центр</li>
+                    <li>Хейвуд</li>
+                    <li>Пасифика</li>
+                    <li>Санто-Доминго</li>
+                    <li>Пригород</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-card" style="margin-top: 2rem;">
+            <h3>🔧 Кибернетика</h3>
+            <div class="cyberware-grid">
+                <div class="cyberware-card">
+                    <h4>Оптический имплант</h4>
+                    <p>Улучшенное зрение и анализ</p>
+                </div>
+                <div class="cyberware-card">
+                    <h4>Нервная система</h4>
+                    <p>Рефлексы и время реакции</p>
+                </div>
+                <div class="cyberware-card">
+                    <h4>Руки-лезвия</h4>
+                    <p>Мощное ближнее оружие</p>
+                </div>
+                <div class="cyberware-card">
+                    <h4>Двойной прыжок</h4>
+                    <p>Улучшенная мобильность</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>

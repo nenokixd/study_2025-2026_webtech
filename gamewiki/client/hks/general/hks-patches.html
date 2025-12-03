@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Патч ноут - Hollow Knight: Silksong</title>
+    <!-- ПРАВИЛЬНЫЕ ПУТИ К СТИЛЯМ -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../hollow-knight-silksong-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="hk-header">
+        <nav class="hk-navbar">
+            <div class="hk-nav-brand">
+                <!-- ИСПРАВЛЕННЫЕ ПУТИ К ГЛАВНЫМ СТРАНИЦАМ -->
+                <h1><a href="../../index.html">GameWiki</a></h1>
+                <span class="game-title">/ 
+                    <a href="../hollow-knight-silksong-main.html" style="color: #d86a6a;">Hollow Knight: Silksong</a> / 
+                    Патч ноут
+                </span>
+            </div>
+            <div class="hk-nav-links">
+                <!-- ИСПРАВЛЕННЫЕ ССЫЛКИ -->
+                <a href="../hollow-knight-silksong-main.html">Главная</a>
+                <a href="../hollow-knight-silksong-equipment.html">Экипировка</a>
+                <a href="../../index.html">Все игры</a>
+                <a href="../../login.html" id="login-link">Войти</a>
+                <a href="../../profile.html" id="profile-link" style="display: none;">Профиль</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hk-container">
+        <section class="hk-hero">
+            <div class="hk-hero-content">
+                <h1 class="red-glow">Патч ноут</h1>
+                <p class="silver-text">Обновления, изменения и исправления</p>
+            </div>
+        </section>
+
+        <!-- КОНТЕЙНЕР ДЛЯ УНИВЕРСАЛЬНОЙ НАВИГАЦИИ -->
+        <div id="hk-navigation-container">
+            <!-- Навигация загрузится через JavaScript -->
+        </div>
+
+        <section class="hk-content-section">
+            <div class="hk-section-header">
+                <h2><i class="fas fa-clipboard-list"></i> История обновлений</h2>
+                <p>Все изменения в игре с момента релиза</p>
+            </div>
+            
+            <div class="hk-patches-list">
+                <div class="hk-patch-card">
+                    <div class="hk-patch-header">
+                        <h3><i class="fas fa-code-branch"></i> Патч 1.0</h3>
+                        <span class="hk-patch-date"><i class="fas fa-calendar-alt"></i> День релиза</span>
+                    </div>
+                    <div class="hk-patch-content">
+                        <h4>Основные изменения:</h4>
+                        <ul>
+                            <li><i class="fas fa-rocket"></i> Первоначальный релиз игры</li>
+                            <li><i class="fas fa-cogs"></i> Базовая функциональность</li>
+                            <li><i class="fas fa-gamepad"></i> Все основные механики</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="hk-coming-soon">
+                    <h3><i class="fas fa-tools"></i> Система патч-ноутов в разработке</h3>
+                    <p>После выхода игры здесь будет отображаться:</p>
+                    <ul class="hk-features-list">
+                        <li><i class="fas fa-history"></i> Полная история обновлений</li>
+                        <li><i class="fas fa-balance-scale"></i> Балансные изменения</li>
+                        <li><i class="fas fa-bug"></i> Исправления багов</li>
+                        <li><i class="fas fa-plus-circle"></i> Новый контент</li>
+                    </ul>
+                    <!-- ИСПРАВЛЕННАЯ ССЫЛКА НАЗАД -->
+                    <a href="../hollow-knight-silksong-main.html" class="hk-cta-button">
+                        <i class="fas fa-arrow-left"></i> Вернуться на главную
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="hk-footer">
+        <p>Hollow Knight: Silksong Wiki • Патч ноут • Обновлено: 16 Сен 2025</p>
+    </footer>
+
+    <!-- ПРАВИЛЬНЫЕ ПУТИ К JS ФАЙЛАМ -->
+    <script src="../../auth.js"></script>
+    <script src="../hollow-knight-silksong.js"></script>
+    <script>
+        // Динамическая загрузка навигации
+        fetch('../navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('hk-navigation-container').innerHTML = data;
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+    </script>
+</body>
+</html>

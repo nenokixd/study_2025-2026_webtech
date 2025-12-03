@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стальная душа - Hollow Knight: Silksong</title>
+    <!-- ПРАВИЛЬНЫЕ ПУТИ К СТИЛЯМ -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../hollow-knight-silksong-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="hk-header">
+        <nav class="hk-navbar">
+            <div class="hk-nav-brand">
+                <!-- ИСПРАВЛЕННЫЕ ПУТИ К ГЛАВНЫМ СТРАНИЦАМ -->
+                <h1><a href="../../index.html">GameWiki</a></h1>
+                <span class="game-title">/ 
+                    <a href="../hollow-knight-silksong-main.html" style="color: #d86a6a;">Hollow Knight: Silksong</a> / 
+                    Стальная душа
+                </span>
+            </div>
+            <div class="hk-nav-links">
+                <!-- ИСПРАВЛЕННЫЕ ССЫЛКИ -->
+                <a href="../hollow-knight-silksong-main.html">Главная</a>
+                <a href="../hollow-knight-silksong-equipment.html">Экипировка</a>
+                <a href="../../index.html">Все игры</a>
+                <a href="../../login.html" id="login-link">Войти</a>
+                <a href="../../profile.html" id="profile-link" style="display: none;">Профиль</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hk-container">
+        <section class="hk-hero">
+            <div class="hk-hero-content">
+                <h1 class="red-glow">Режим "Стальная душа"</h1>
+                <p class="silver-text">Испытание для настоящих мастеров</p>
+            </div>
+        </section>
+
+        <!-- КОНТЕЙНЕР ДЛЯ УНИВЕРСАЛЬНОЙ НАВИГАЦИИ -->
+        <div id="hk-navigation-container">
+            <!-- Навигация загрузится через JavaScript -->
+        </div>
+
+        <section class="hk-content-section">
+            <div class="hk-section-header">
+                <h2><i class="fas fa-skull"></i> Сложнейший режим игры</h2>
+                <p>Одна жизнь. Никаких шансов на ошибку.</p>
+            </div>
+            
+            <div class="hk-steelsoul-info">
+                <div class="hk-warning-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Внимание: Экстремальная сложность!</h3>
+                    <p>Режим "Стальная душа" - это испытание для самых опытных игроков. Все правила обычной игры отменяются.</p>
+                </div>
+                
+                <div class="hk-rules-grid">
+                    <div class="hk-rule-card">
+                        <h4><i class="fas fa-heart-broken"></i> Одна жизнь</h4>
+                        <p>Смерть означает конец игры. Начинайте заново.</p>
+                    </div>
+                    
+                    <div class="hk-rule-card">
+                        <h4><i class="fas fa-save"></i> Автосохранения</h4>
+                        <p>Игра сохраняется автоматически. Нет возврата к прошлым сохранениям.</p>
+                    </div>
+                    
+                    <div class="hk-rule-card">
+                        <h4><i class="fas fa-trophy"></i> Достижения</h4>
+                        <p>Особые достижения за прохождение в этом режиме.</p>
+                    </div>
+                </div>
+                
+                <div class="hk-coming-soon">
+                    <h3><i class="fas fa-shield-alt"></i> Страница в разработке</h3>
+                    <p>После выхода игры здесь появится:</p>
+                    <ul class="hk-features-list">
+                        <li><i class="fas fa-book"></i> Полное руководство по режиму</li>
+                        <li><i class="fas fa-chess"></i> Стратегии выживания</li>
+                        <li><i class="fas fa-user-cog"></i> Рекомендуемые билды</li>
+                        <li><i class="fas fa-users"></i> Советы от сообщества</li>
+                    </ul>
+                    <!-- ИСПРАВЛЕННАЯ ССЫЛКА НАЗАД -->
+                    <a href="../hollow-knight-silksong-main.html" class="hk-cta-button">
+                        <i class="fas fa-arrow-left"></i> Вернуться на главную
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="hk-footer">
+        <p>Hollow Knight: Silksong Wiki • Стальная душа • Обновлено: 16 Сен 2025</p>
+    </footer>
+
+    <!-- ПРАВИЛЬНЫЕ ПУТИ К JS ФАЙЛАМ -->
+    <script src="../../auth.js"></script>
+    <script src="../hollow-knight-silksong.js"></script>
+    <script>
+        // Динамическая загрузка навигации
+        fetch('../navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('hk-navigation-container').innerHTML = data;
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+    </script>
+</body>
+</html>

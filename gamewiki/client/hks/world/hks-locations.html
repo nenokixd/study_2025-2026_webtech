@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Локации - Мир Hollow Knight: Silksong</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../hollow-knight-silksong-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="hk-header">
+        <nav class="hk-navbar">
+            <div class="hk-nav-brand">
+                <h1><a href="../../index.html">GameWiki</a></h1>
+                <span class="game-title">/ <a href="../hollow-knight-silksong-main.html" style="color: #d86a6a;">Hollow Knight: Silksong</a> / <a href="../hollow-knight-silksong-world.html">Мир</a> / Локации</span>
+            </div>
+            <div class="hk-nav-links">
+                <a href="../../index.html">Все игры</a>
+                <a href="../../login.html" id="login-link">Войти</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hk-container">
+        <section class="hk-hero">
+            <div class="hk-hero-content">
+                <h1 class="red-glow">Локации Фарлума</h1>
+                <p class="silver-text">Регионы, области и тайные места королевства</p>
+            </div>
+        </section>
+
+        <div id="hk-navigation-container">
+            <!-- Навигация загрузится через JS -->
+        </div>
+
+        <section class="hk-content-section">
+            <div class="hk-section-header">
+                <h2><i class="fas fa-map-marked-alt"></i> Все локации</h2>
+                <p>Подробное описание каждого региона Фарлума</p>
+            </div>
+            
+            <div class="hk-coming-soon">
+                <h3>🏰 Страница в разработке</h3>
+                <p>Мы активно работаем над наполнением информации о локациях. Скоро здесь появится:</p>
+                <ul class="hk-features-list">
+                    <li>Подробные карты всех регионов</li>
+                    <li>Описание каждой локации</li>
+                    <li>Секреты и скрытые области</li>
+                    <li>Способы доступа к разным зонам</li>
+                </ul>
+                <a href="../hollow-knight-silksong-world.html" class="hk-cta-button">Вернуться к разделу "Мир"</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../auth.js"></script>
+    <script src="../hollow-knight-silksong.js"></script>
+    <script>
+        // Динамическая загрузка навигации
+        fetch('../navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('hk-navigation-container').innerHTML = data;
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+            });
+    </script>
+</body>
+</html>

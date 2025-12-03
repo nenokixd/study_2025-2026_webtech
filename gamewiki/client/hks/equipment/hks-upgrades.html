@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Улучшения - Hollow Knight: Silksong</title>
+    <!-- ПРАВИЛЬНЫЕ ПУТИ К СТИЛЯМ -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../hollow-knight-silksong-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="hk-header">
+        <nav class="hk-navbar">
+            <div class="hk-nav-brand">
+                <!-- ИСПРАВЛЕННЫЕ ПУТИ К ГЛАВНЫМ СТРАНИЦАМ -->
+                <h1><a href="../../index.html">GameWiki</a></h1>
+                <span class="game-title">/ 
+                    <a href="../hollow-knight-silksong-main.html" style="color: #d86a6a;">Hollow Knight: Silksong</a> / 
+                    <a href="../hollow-knight-silksong-equipment.html">Экипировка</a> / 
+                    Улучшения
+                </span>
+            </div>
+            <div class="hk-nav-links">
+                <!-- ИСПРАВЛЕННЫЕ ССЫЛКИ -->
+                <a href="../hollow-knight-silksong-main.html">Главная</a>
+                <a href="../hollow-knight-silksong-equipment.html">Экипировка</a>
+                <a href="../../index.html">Все игры</a>
+                <a href="../../login.html" id="login-link">Войти</a>
+                <a href="../../profile.html" id="profile-link" style="display: none;">Профиль</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hk-container">
+        <section class="hk-hero">
+            <div class="hk-hero-content">
+                <h1 class="red-glow">Улучшения</h1>
+                <p class="silver-text">Улучшения характеристик и модификации снаряжения</p>
+            </div>
+        </section>
+
+        <!-- КОНТЕЙНЕР ДЛЯ УНИВЕРСАЛЬНОЙ НАВИГАЦИИ -->
+        <div id="hk-navigation-container">
+            <!-- Навигация загрузится через JavaScript -->
+        </div>
+
+        <section class="hk-content-section">
+            <div class="hk-section-header">
+                <h2><i class="fas fa-bolt"></i> Улучшения Хорнет</h2>
+                <p>Улучшения характеристик и модификации снаряжения</p>
+            </div>
+            
+            <div class="hk-coming-soon">
+                <h3>⚡ Страница в разработке</h3>
+                <p>Мы активно работаем над наполнением информации об улучшениях. Скоро здесь появится:</p>
+                <ul class="hk-features-list">
+                    <li>Полный список всех улучшений</li>
+                    <li>Подробное описание каждого улучшения</li>
+                    <li>Эффекты и бонусы от улучшений</li>
+                    <li>Способы получения и применения</li>
+                </ul>
+                <!-- ИСПРАВЛЕННАЯ ССЫЛКА НАЗАД -->
+                <a href="../hollow-knight-silksong-equipment.html" class="hk-cta-button">
+                    <i class="fas fa-arrow-left"></i> Вернуться к экипировке
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="hk-footer">
+        <p>Hollow Knight: Silksong Wiki • Улучшения • Обновлено: 16 Сен 2025</p>
+    </footer>
+
+    <!-- ПРАВИЛЬНЫЕ ПУТИ К JS ФАЙЛАМ -->
+    <script src="../../auth.js"></script>
+    <script src="../hollow-knight-silksong.js"></script>
+    <script>
+        // Динамическая загрузка навигации
+        fetch('../navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('hk-navigation-container').innerHTML = data;
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+    </script>
+</body>
+</html>

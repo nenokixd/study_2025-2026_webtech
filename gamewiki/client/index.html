@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameWiki | Энциклопедия игр</title>
+    <link rel="stylesheet" href="styles-new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Хедер с навигацией -->
+    <header class="gw-header">
+        <div class="gw-header-top">
+            <div class="container">
+                <div class="gw-logo">
+                    <h1><i class="fas fa-book-open"></i> GameWiki</h1>
+                    <span class="gw-tagline">Энциклопедия игровых миров</span>
+                </div>
+                
+                <div class="gw-search">
+                    <form class="search-form">
+                        <input type="text" placeholder="Поиск игр, гайдов, персонажей...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                
+                <div class="gw-user-auth">
+                    <a href="login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Войти</a>
+                    <a href="register.html" class="btn-register"><i class="fas fa-user-plus"></i> Регистрация</a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="gw-navbar">
+            <div class="container">
+                <ul class="gw-nav-menu">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="#"><i class="fas fa-gamepad"></i> Игры</a></li>
+                    <li><a href="#"><i class="fas fa-newspaper"></i> Новости</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Гайды</a></li>
+                    <li><a href="#"><i class="fas fa-database"></i> Базы данных</a></li>
+                    <li><a href="#"><i class="fas fa-video"></i> Видео</a></li>
+                    <li><a href="#"><i class="fas fa-comments"></i> Форум</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <!-- Герой секция -->
+        <section class="gw-hero">
+            <div class="gw-hero-content">
+                <h2>Полная энциклопедия игровых миров</h2>
+                <p>Гайды, базы данных, прохождения и секреты ваших любимых игр</p>
+                <div class="gw-hero-stats">
+                    <div class="stat">
+                        <span class="number">150+</span>
+                        <span class="label">Игр</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">5,000+</span>
+                        <span class="label">Гайдов</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">50,000+</span>
+                        <span class="label">Страниц</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Популярные игры -->
+        <section class="gw-section">
+            <div class="gw-section-header">
+                <h2><i class="fas fa-fire"></i> Популярные игры</h2>
+                <a href="#" class="gw-view-all">Все игры <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="gw-games-grid">
+                <!-- Игра 1 -->
+                <div class="gw-game-card">
+                    <div class="gw-game-image">
+                        <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4rq8.jpg" alt="Hollow Knight: Silksong">
+                        <div class="gw-game-badge">Ожидается</div>
+                    </div>
+                    <div class="gw-game-content">
+                        <h3><a href="hks/hollow-knight-silksong-main.html">Hollow Knight: Silksong</a></h3>
+                        <p class="gw-game-genre">Metroidvania • Платформер</p>
+                        <p class="gw-game-desc">Новое приключение Хорнет в королевстве Фарлум. Полная база данных экипировки, способностей и секретов.</p>
+                        <div class="gw-game-links">
+                            <a href="hks/hollow-knight-main.html" class="gw-btn-primary">Обзор</a>
+                            <a href="hks/hollow-knight-equipment.html" class="gw-btn-secondary">Экипировка</a>
+                            <a href="#" class="gw-btn-icon"><i class="fas fa-book"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Игра 2 -->
+                <div class="gw-game-card">
+                    <div class="gw-game-image">
+                        <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co49w5.jpg" alt="Elden Ring">
+                        <div class="gw-game-badge">Рейтинг 96%</div>
+                    </div>
+                    <div class="gw-game-content">
+                        <h3><a href="#">Elden Ring</a></h3>
+                        <p class="gw-game-genre">RPG • Открытый мир</p>
+                        <p class="gw-game-desc">Полные гайды по билдам, оружию, заклинаниям и секретам Междуземья.</p>
+                        <div class="gw-game-links">
+                            <a href="#" class="gw-btn-primary">Обзор</a>
+                            <a href="#" class="gw-btn-secondary">Билды</a>
+                            <a href="#" class="gw-btn-icon"><i class="fas fa-map"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Игра 3 -->
+                <div class="gw-game-card">
+                    <div class="gw-game-image">
+                        <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4p7y.jpg" alt="The Witcher 3">
+                        <div class="gw-game-badge">Классика</div>
+                    </div>
+                    <div class="gw-game-content">
+                        <h3><a href="#">The Witcher 3: Wild Hunt</a></h3>
+                        <p class="gw-game-genre">RPG • Фэнтези</p>
+                        <p class="gw-game-desc">Все квесты, монстры, алхимия и секреты мира Ведьмака.</p>
+                        <div class="gw-game-links">
+                            <a href="#" class="gw-btn-primary">Обзор</a>
+                            <a href="#" class="gw-btn-secondary">Квесты</a>
+                            <a href="#" class="gw-btn-icon"><i class="fas fa-hat-wizard"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Игра 4 -->
+                <div class="gw-game-card">
+                    <div class="gw-game-image">
+                        <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4p7d.jpg" alt="Cyberpunk 2077">
+                        <div class="gw-game-badge">Обновлено</div>
+                    </div>
+                    <div class="gw-game-content">
+                        <h3><a href="#">Cyberpunk 2077</a></h3>
+                        <p class="gw-game-genre">RPG • Киберпанк</p>
+                        <p class="gw-game-desc">Перки, киберимпланты, оружие и секреты Найт-Сити.</p>
+                        <div class="gw-game-links">
+                            <a href="#" class="gw-btn-primary">Обзор</a>
+                            <a href="#" class="gw-btn-secondary">Перки</a>
+                            <a href="#" class="gw-btn-icon"><i class="fas fa-microchip"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Новости и обновления -->
+        <section class="gw-section">
+            <div class="gw-section-header">
+                <h2><i class="fas fa-newspaper"></i> Последние обновления</h2>
+            </div>
+            
+            <div class="gw-news-grid">
+                <div class="gw-news-card">
+                    <div class="gw-news-date">Сегодня</div>
+                    <h3><a href="#">Добавлена полная база экипировки Hollow Knight: Silksong</a></h3>
+                    <p>Все инструменты, знаки и шелковые умения Хорнет теперь доступны в нашей базе данных.</p>
+                </div>
+                
+                <div class="gw-news-card">
+                    <div class="gw-news-date">Вчера</div>
+                    <h3><a href="#">Обновлены гайды по билдам Elden Ring</a></h3>
+                    <p>Добавлены новые билды для патча 1.10 с оптимальным распределением характеристик.</p>
+                </div>
+                
+                <div class="gw-news-card">
+                    <div class="gw-news-date">2 дня назад</div>
+                    <h3><a href="#">Добавлены карты всех локаций The Witcher 3</a></h3>
+                    <p>Полные интерактивные карты Вызимы, Скеллиге и Туссента с отметками всех точек интереса.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Быстрые ссылки -->
+        <section class="gw-quick-links">
+            <div class="gw-quick-link">
+                <i class="fas fa-database"></i>
+                <h3>Базы данных</h3>
+                <p>Полные коллекции предметов, оружия и экипировки</p>
+            </div>
+            <div class="gw-quick-link">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Гайды</h3>
+                <p>Подробные руководства по прохождению и тактикам</p>
+            </div>
+            <div class="gw-quick-link">
+                <i class="fas fa-users"></i>
+                <h3>Сообщество</h3>
+                <p>Обсуждения, советы и помощь от игроков</p>
+            </div>
+            <div class="gw-quick-link">
+                <i class="fas fa-wrench"></i>
+                <h3>Инструменты</h3>
+                <p>Калькуляторы билдов и интерактивные карты</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="gw-footer">
+        <div class="container">
+            <div class="gw-footer-content">
+                <div class="gw-footer-section">
+                    <h3>GameWiki</h3>
+                    <p>Крупнейшая энциклопедия игровых миров на русском языке. Гайды, базы данных и сообщество игроков.</p>
+                </div>
+                
+                <div class="gw-footer-section">
+                    <h3>Разделы</h3>
+                    <ul>
+                        <li><a href="#">Игры</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Гайды</a></li>
+                        <li><a href="#">Форум</a></li>
+                    </ul>
+                </div>
+                
+                <div class="gw-footer-section">
+                    <h3>Популярное</h3>
+                    <ul>
+                        <li><a href="hks/hollow-knight-silksong-main.html">Hollow Knight: Silksong</a></li>
+                        <li><a href="#">Elden Ring</a></li>
+                        <li><a href="#">The Witcher 3</a></li>
+                        <li><a href="#">Cyberpunk 2077</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="gw-footer-bottom">
+                <p>&copy; 2024 GameWiki. Все права защищены.</p>
+                <p>Это учебный проект. Все материалы взяты из открытых источников.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

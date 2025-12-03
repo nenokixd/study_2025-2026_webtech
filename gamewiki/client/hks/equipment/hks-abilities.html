@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Способности - Hollow Knight: Silksong</title>
+    <!-- ПУТИ ДОЛЖНЫ ИДТИ ОТ КОРНЯ hks/ -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../hollow-knight-silksong-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="hk-header">
+        <nav class="hk-navbar">
+            <div class="hk-nav-brand">
+                <!-- Исправляем пути к главным страницам -->
+                <h1><a href="../../index.html">GameWiki</a></h1>
+                <span class="game-title">/ 
+                    <a href="../hollow-knight-silksong-main.html" style="color: #d86a6a;">Hollow Knight: Silksong</a> / 
+                    <a href="../hollow-knight-silksong-equipment.html">Экипировка</a> / 
+                    Способности
+                </span>
+            </div>
+            <div class="hk-nav-links">
+                <a href="../hollow-knight-silksong-main.html">Главная</a>
+                <a href="../hollow-knight-silksong-equipment.html">Экипировка</a>
+                <a href="../../index.html">Все игры</a>
+                <a href="../../login.html" id="login-link">Войти</a>
+                <a href="../../profile.html" id="profile-link" style="display: none;">Профиль</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hk-container">
+        <section class="hk-hero">
+            <div class="hk-hero-content">
+                <h1 class="red-glow">Способности</h1>
+                <p class="silver-text">Основные боевые и исследовательские умения</p>
+            </div>
+        </section>
+
+        <!-- УНИВЕРСАЛЬНАЯ НАВИГАЦИЯ (ВСТАВЛЯЕТСЯ ЧЕРЕЗ JS) -->
+        <div id="hk-navigation-container">
+            <!-- Навигация загрузится через JavaScript -->
+        </div>
+
+        <section class="hk-content-section">
+            <div class="hk-section-header">
+                <h2><i class="fas fa-star"></i> Способности Хорнет</h2>
+                <p>Основные боевые и исследовательские умения Хорнет</p>
+            </div>
+            
+            <div class="hk-coming-soon">
+                <h3>💫 Страница в разработке</h3>
+                <p>Мы активно работаем над наполнением информации о способностях. Скоро здесь появится:</p>
+                <ul class="hk-features-list">
+                    <li>Полный список всех способностей</li>
+                    <li>Подробное описание каждой способности</li>
+                    <li>Способы получения и улучшения</li>
+                    <li>Комбинации и стратегии использования</li>
+                </ul>
+                <a href="../hollow-knight-silksong-equipment.html" class="hk-cta-button">
+                    <i class="fas fa-arrow-left"></i> Вернуться к экипировке
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="hk-footer">
+        <p>Hollow Knight: Silksong Wiki • Способности • Обновлено: 16 Сен 2025</p>
+    </footer>
+
+    <!-- ПРАВИЛЬНЫЕ ПУТИ К JS ФАЙЛАМ -->
+    <script src="../../auth.js"></script>
+    <script src="../hollow-knight-silksong.js"></script>
+    <script>
+        // Динамическая загрузка навигации - путь от корня hks/
+        fetch('../navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('hk-navigation-container').innerHTML = data;
+                if (typeof initNavigation === 'function') {
+                    initNavigation();
+                }
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+    </script>
+</body>
+</html>

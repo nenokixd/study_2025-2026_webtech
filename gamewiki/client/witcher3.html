@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Witcher 3 - GameWiki</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .game-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.igdb.com/igdb/image/upload/t_1080p/co4p7y.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .quest-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .quest-table th, .quest-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        
+        .quest-table th {
+            background: #ff6b35;
+            color: white;
+        }
+        
+        .monster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .monster-card {
+            background: #3d3d3d;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1><a href="index.html" style="color: #ff6b35; text-decoration: none;">GameWiki</a></h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="login.html" id="login-link">Войти</a>
+                <a href="profile.html" id="profile-link" style="display: none;">Профиль</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="game-header">
+            <h1>The Witcher 3: Wild Hunt</h1>
+            <p>Охота на чудовищ в мире темного фэнтези</p>
+        </section>
+
+        <div class="game-sections" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="section-card">
+                <h3>📜 Основные квесты</h3>
+                <table class="quest-table">
+                    <thead>
+                        <tr>
+                            <th>Квест</th>
+                            <th>Уровень</th>
+                            <th>Локация</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Охотник на охотников</td>
+                            <td>15</td>
+                            <td>Вызима</td>
+                        </tr>
+                        <tr>
+                            <td>Кровный напиток</td>
+                            <td>12</td>
+                            <td>Новиград</td>
+                        </tr>
+                        <tr>
+                            <td>Охота на чудовищ</td>
+                            <td>8</td>
+                            <td>Белый сад</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-card">
+                <h3>🧪 Алхимия</h3>
+                <ul>
+                    <li>Зелья</li>
+                    <li>Масла для оружия</li>
+                    <li>Бомбы</li>
+                    <li>Декокты</li>
+                </ul>
+                <h4>Рецепты:</h4>
+                <ul>
+                    <li>Зелье белого мёда</li>
+                    <li>Масло против нежити</li>
+                    <li>Бомба "Лунная пыль"</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>🎲 Гвинт</h3>
+                <p>Карточная игра в мире Ведьмака</p>
+                <h4>Лучшие колоды:</h4>
+                <ul>
+                    <li>Северные королевства</li>
+                    <li>Нильфгаард</li>
+                    <li>Скуя'теле</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-card" style="margin-top: 2rem;">
+            <h3>👹 Чудовища</h3>
+            <div class="monster-grid">
+                <div class="monster-card">
+                    <h4>Грифон</h4>
+                    <p>Гибрид льва и орла</p>
+                    <small>Слаб к маслам против гибридов</small>
+                </div>
+                <div class="monster-card">
+                    <h4>Водяной</h4>
+                    <p>Обитает в водоемах</p>
+                    <small>Слаб к маслам против проклятых</small>
+                </div>
+                <div class="monster-card">
+                    <h4>Утопец</h4>
+                    <p>Нежить в воде</p>
+                    <small>Слаб к маслам против нежити</small>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Ring - GameWiki</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .game-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.igdb.com/igdb/image/upload/t_1080p/co5xpa.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .game-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .section-card {
+            background: #2d2d2d;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .builds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .build-card {
+            background: #3d3d3d;
+            padding: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .build-card:hover {
+            transform: translateY(-2px);
+            background: #4d4d4d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1><a href="index.html" style="color: #ff6b35; text-decoration: none;">GameWiki</a></h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="login.html" id="login-link">Войти</a>
+                <a href="profile.html" id="profile-link" style="display: none;">Профиль</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="game-header">
+            <h1>Elden Ring</h1>
+            <p>Открытый мир RPG от создателей Dark Souls</p>
+        </section>
+
+        <div class="game-sections">
+            <div class="section-card">
+                <h3>🧙‍♂️ Билды</h3>
+                <div class="builds-grid">
+                    <div class="build-card" onclick="showBuild('mage')">
+                        <h4>Маг</h4>
+                        <p>Сила заклинаний</p>
+                    </div>
+                    <div class="build-card" onclick="showBuild('warrior')">
+                        <h4>Воин</h4>
+                        <p>Сила и выносливость</p>
+                    </div>
+                    <div class="build-card" onclick="showBuild('assassin')">
+                        <h4>Убийца</h4>
+                        <p>Ловкость и скрытность</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>⚔️ Оружие</h3>
+                <ul>
+                    <li>Мечи и щиты</li>
+                    <li>Посохи и катализаторы</li>
+                    <li>Луки и арбалеты</li>
+                    <li>Легендарное оружие</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h3>🏰 Локации</h3>
+                <ul>
+                    <li>Междуземье</li>
+                    <li>Круглый стол</li>
+                    <li>Подземелья</li>
+                    <li>Испытания</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Детали билда (скрыто по умолчанию) -->
+        <div id="buildDetails" style="display: none;">
+            <div class="section-card">
+                <h3 id="buildTitle">Детали билда</h3>
+                <div id="buildContent">
+                    <!-- Контент будет загружаться динамически -->
+                </div>
+                <button onclick="hideBuildDetails()" class="btn-primary" style="margin-top: 1rem;">Назад</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+    <script>
+        const builds = {
+            mage: {
+                title: "Билд Мага",
+                content: `
+                    <h4>Основные характеристики:</h4>
+                    <ul>
+                        <li>Интеллект: 60+</li>
+                        <li>Разум: 30+</li>
+                        <li>Ловкость: 20</li>
+                    </ul>
+                    <h4>Рекомендуемое оружие:</h4>
+                    <ul>
+                        <li>Посох Академии</li>
+                        <li>Меч Лусата</li>
+                    </ul>
+                    <h4>Заклинания:</h4>
+                    <ul>
+                        <li>Комета Азура</li>
+                        <li>Каменный град</li>
+                    </ul>
+                `
+            },
+            warrior: {
+                title: "Билд Воина", 
+                content: `
+                    <h4>Основные характеристики:</h4>
+                    <ul>
+                        <li>Сила: 50+</li>
+                        <li>Выносливость: 40+</li>
+                        <li>Живучесть: 40+</li>
+                    </ul>
+                    <h4>Рекомендуемое оружие:</h4>
+                    <ul>
+                        <li>Большой меч</li>
+                        <li>Топор мясника</li>
+                    </ul>
+                    <h4>Тактика:</h4>
+                    <p>Используйте щит для блокировки и тяжелое оружие для пробивания защиты.</p>
+                `
+            },
+            assassin: {
+                title: "Билд Убийцы",
+                content: `
+                    <h4>Основные характеристики:</h4>
+                    <ul>
+                        <li>Ловкость: 55+</li>
+                        <li>Сила: 20</li>
+                        <li>Интеллект: 15</li>
+                    </ul>
+                    <h4>Рекомендуемое оружие:</h4>
+                    <ul>
+                        <li>Кинжалы</li>
+                        <li>Лук</li>
+                    </ul>
+                    <h4>Навыки:</h4>
+                    <ul>
+                        <li>Скрытность</li>
+                        <li>Критические атаки</li>
+                        <li>Парrying</li>
+                    </ul>
+                `
+            }
+        };
+
+        function showBuild(buildType) {
+            const build = builds[buildType];
+            document.getElementById('buildTitle').textContent = build.title;
+            document.getElementById('buildContent').innerHTML = build.content;
+            document.getElementById('buildDetails').style.display = 'block';
+            window.scrollTo(0, document.getElementById('buildDetails').offsetTop);
+        }
+
+        function hideBuildDetails() {
+            document.getElementById('buildDetails').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
